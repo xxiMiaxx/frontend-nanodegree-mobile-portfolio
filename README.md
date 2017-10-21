@@ -30,6 +30,7 @@ in order for you to run this site :
 5- compress all images.
 6- minify JS and CSS files.
 7- change every `querySelector` with `getElementById` cause it's faster.
+8- save the array length in a varibale `pLength`, so the value isn't checked with every iteration.
 ---------------------------
 ### Results
 
