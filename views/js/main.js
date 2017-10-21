@@ -405,7 +405,7 @@ var sizeSwitcher = {
   "2": 0.3333,
   "3": 0.5
 };
-  var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
+
   var oldWidth, windowWidth, oldSize, newSize, dx;
 
 var resizePizzas = function(size) {
@@ -414,13 +414,13 @@ var resizePizzas = function(size) {
   function changeSliderLabel(size) {
     switch(size) {
       case "1":
-        document.querySelector("#pizzaSize").innerHTML = "Small";
+        document.getElementById("pizzaSize").innerHTML = "Small";
         return;
       case "2":
-        document.querySelector("#pizzaSize").innerHTML = "Medium";
+        document.getElementById("pizzaSize").innerHTML = "Medium";
         return;
       case "3":
-        document.querySelector("#pizzaSize").innerHTML = "Large";
+        document.getElementById("pizzaSize").innerHTML = "Large";
         return;
       default:
         console.log("bug in changeSliderLabel");
@@ -434,14 +434,14 @@ var resizePizzas = function(size) {
    // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
   function determineDx (elem, size) {
     oldWidth = elem.offsetWidth;
-    windowWidth = document.querySelector("#randomPizzas").offsetWidth;
+    windowWidth = document.getElementById("randomPizzas").offsetWidth;
     oldSize = oldWidth / windowWidth;
     newSize = sizeSwitcher[size];
     dx = (newSize - oldSize) * windowWidth;
 
     return dx;
     }
-
+  var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
 
   // Iterates through pizza elements on the page and changes their widths
    dx = determineDx(randomPizzas[0], size);
@@ -522,7 +522,7 @@ function updatePositions() {
 
 // runs updatePositions on scroll
 window.addEventListener('scroll', updatePositions);
-var scrollUp = document.querySelector("#movingPizzas1");
+var scrollUp = document.getElementById("movingPizzas1");
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;

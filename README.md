@@ -12,7 +12,7 @@ in order for you to run this site :
 #### Changes made to optimize this site :
 
 #### Part 1: Optimize PageSpeed Insights score for index.html
-1- use `sync` attribute to stop JS from blocking the rendering path by synchronously loading low priority scripts.
+1- use `async` attribute to stop JS from blocking the rendering path by synchronously loading low priority scripts.
 2- place the function inside `<script>` at the bottom of the `<body>`
 3- inline the external `style.css` file to ensure that the css is not render blocking and to dekiver the styling as quickly as possibale.
 4- remove the web font as it can slow the page down.
@@ -29,6 +29,7 @@ in order for you to run this site :
 4- use the `requestAnimationFrame` methode to make sure that `updatePositions` code is called when the users computer is ready to make changes to the screen each time, which reults in a smoothe more efficient animation.
 5- compress all images.
 6- minify JS and CSS files.
+7- change every `querySelector` with `getElementById` cause it's faster.
 ---------------------------
 ### Results
 
